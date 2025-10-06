@@ -224,7 +224,13 @@ export default function Home() {
     setError(null);
     try {
       const response = await axios.get<Task[]>(API_URL);
-      setTasks(response.data.map((t: Task) => ({ ...t, tag: t.tag || "Geral" })));
+      setTasks(
+        response.data.map((t: Task) => ({
+          ...t,
+          tag: t.tag || "Geral",
+        }))
+      );
+
     } catch (err) {
       setError("Erro ao buscar as tarefas. Verifique se o json-server está rodando (npm run server).");
       console.error(err);
