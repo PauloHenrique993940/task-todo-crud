@@ -1,0 +1,234 @@
+/* ======================================= */
+/* styles.css - Estilos para TaskFlow 3D - DARK MODE */
+/* ======================================= */
+
+/* Cores Principais do Dark Mode */
+:root {
+  --bg-dark: #121212; /* Fundo principal muito escuro */
+  --bg-card: #1e1e1e; /* Fundo dos elementos (container, modal) */
+  --text-light: #e0e0e0; /* Cor do texto principal */
+  --border-dark: #3a3a3a; /* Cor da borda suave */
+  --input-bg: #2c2c2c; /* Fundo dos campos de input */
+  --input-text: #ffffff; /* Texto dentro dos inputs */
+}
+
+/* --- Estilos Base/Gerais --- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-dark); /* Fundo escuro */
+  color: var(--text-light); /* Texto claro */
+  margin: 0;
+}
+
+/* Estilos para o Container Principal (main) */
+.container {
+  padding: 1.5rem; /* p-6 */
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--bg-card); /* Fundo do container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais visível no modo escuro */
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid var(--border-dark);
+}
+
+.main-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+  color: #5d93ff; /* Cor clara para o título */
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 0.5rem;
+}
+
+/* --- Estilos do Formulário de Adição --- */
+.form-group {
+  margin-bottom: 1.5rem; /* mb-6 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-field {
+  border: 1px solid var(--border-dark); /* Borda escura */
+  background-color: var(--input-bg); /* Fundo do input */
+  color: var(--input-text); /* Texto do input */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  border-radius: 0.25rem; /* rounded */
+  flex-grow: 1;
+  max-width: 200px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field::placeholder {
+    color: #999; /* Placeholder mais claro para contraste */
+}
+
+.input-field:focus {
+  border-color: #2563eb; /* blue-600 */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5); /* Efeito de foco mais intenso */
+  outline: none;
+}
+
+/* --- Estilos dos Botões (Cores de Ação Mantidas) --- */
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Botão Adicionar */
+.btn-add {
+  background-color: #2563eb; /* blue-600 */
+}
+.btn-add:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+/* --- Estilos da Lista de Tarefas --- */
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  border-bottom: 1px solid var(--border-dark); /* Borda de separação escura */
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-tag {
+  font-style: italic;
+  color: #a0a0a0; /* gray-500 mais claro */
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+/* --- Estilos dos Botões de Ação na Lista (Menores) --- */
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-actions .btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Botão Excluir */
+.btn-delete {
+  background-color: #ef4444; /* red-500 */
+}
+.btn-delete:hover {
+  background-color: #dc2626; /* red-600 */
+}
+
+/* Botão Editar */
+.btn-edit {
+  background-color: #f59e0b; /* yellow-500 */
+}
+.btn-edit:hover {
+  background-color: #d97706; /* yellow-600 */
+}
+
+/* --- Estilos de Status e Erro --- */
+
+.error-message {
+  color: #ffbaba; /* Texto de erro claro */
+  font-weight: bold;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ef4444;
+  background-color: #4b0d0d; /* Fundo de erro escuro */
+  border-radius: 0.25rem;
+}
+
+/* --- Estilos do Modal de Edição --- */
+
+.edit-modal {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-dark);
+  border-radius: 0.25rem;
+  background-color: #242424; /* Fundo do modal um pouco diferente do container */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.modal-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  width: 100%;
+  color: var(--text-light);
+}
+
+.modal-input {
+  /* Herda estilos de input-field */
+  flex-grow: 1;
+  max-width: 250px;
+}
+
+/* Botão Salvar (no modal) */
+.btn-save {
+  background-color: #10b981; /* green-500 */
+  margin-top: 0.5rem;
+}
+.btn-save:hover {
+  background-color: #059669; /* green-600 */
+}
+
+/* --- Responsividade (Ajustes para telas pequenas) --- */
+
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .input-field {
+    max-width: none;
+    width: 100%;
+    margin-right: 0;
+  }
+  .btn-add {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .task-actions {
+    margin-top: 0.5rem;
+  }
+  .edit-modal {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .modal-input {
+    max-width: none;
+    width: 100%;
+  }
+  .btn-save {
+    width: 100%;
+  }
+}
